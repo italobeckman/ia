@@ -1,0 +1,8 @@
+transformers
+pillow
+matplotlib
+gradio
+huggingface_hub
+accelerate
+# Instrução para habilitar a aceleração de hardware nas rotinas de cálculos do Pytorch:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118

@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────
+# Experimento: Classificação Tunada
+# Dataset: Breast Cancer (sklearn)
+# Rede mais profunda + SGD com Nesterov + early stopping
+# ─────────────────────────────────────────────
+
+experiment_name: SMTP_Classification_Tuned
+experiment_question: "Este experimento responde se ajustar profundidade, dropout e early stopping melhora a classificacao em relacao ao baseline?"
+
+problem_type: classification
+
+data:
+  test_size: 0.2
+  val_size: 0.2
+
+model:
+  hidden_layers: [128, 64, 32]
+  activation: tanh
+  solver: sgd
+  alpha: 0.001
+  batch_size: 32
+
+optimizer:
+  learning_rate: 0.01
+  learning_rate_schedule: adaptive
+  momentum: 0.95
+  nesterovs_momentum: true
+  beta_1: 0.9
+  beta_2: 0.999
+  epsilon: 1.0e-8
+
+training:
+  n_epochs: 100
+  seed: 42
+  early_stopping: true
+  patience: 15
+  tolerance: 1.0e-5
+  shuffle: true

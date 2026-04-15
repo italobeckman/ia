@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────
+# Experimento: Regressão (padrão)
+# Dataset: Diabetes (sklearn)
+# ─────────────────────────────────────────────
+
+experiment_name: SMTP_Regression
+experiment_question: "Este experimento responde como a mesma pipeline se comporta em regressao no dataset de diabetes com configuracao padrao?"
+
+problem_type: regression
+
+data:
+  test_size: 0.2
+  val_size: 0.2
+
+model:
+  hidden_layers: [128, 64]
+  activation: relu
+  solver: adam
+  alpha: 0.0001
+  batch_size: auto
+
+optimizer:
+  learning_rate: 0.001
+  learning_rate_schedule: adaptive
+  momentum: 0.9
+  nesterovs_momentum: true
+  beta_1: 0.9
+  beta_2: 0.999
+  epsilon: 1.0e-8
+
+training:
+  n_epochs: 80
+  seed: 42
+  early_stopping: false
+  patience: 15
+  tolerance: 1.0e-4
+  shuffle: true

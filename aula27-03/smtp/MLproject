@@ -1,0 +1,7 @@
+name: Standardized_ML_Training_Pipeline
+
+entry_points:
+  main:
+    parameters:
+      config: {type: string, default: "experimentos/classificacao_default.yaml"}
+    command: "python src/train.py --config {config}"

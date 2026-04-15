@@ -1,0 +1,39 @@
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# MLflow and experiment artifacts (smtp)
+smtp/mlruns/
+smtp/models/
+smtp/artifacts_tmp/
+smtp/mlflow.db
+smtp/mlflow.db-journal
+smtp/mlflow.db-shm
+smtp/mlflow.db-wal

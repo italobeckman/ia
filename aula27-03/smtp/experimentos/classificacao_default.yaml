@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────
+# Experimento: Classificação (padrão)
+# Dataset: Breast Cancer (sklearn)
+# ─────────────────────────────────────────────
+
+experiment_name: SMTP_Classification
+experiment_question: "Este experimento responde se uma MLP padrao ja separa bem os casos de classificacao usando uma configuracao base?"
+
+problem_type: classification
+
+data:
+  test_size: 0.2
+  val_size: 0.2
+
+model:
+  hidden_layers: [100, 50]
+  activation: relu          # relu | tanh | logistic | identity
+  solver: adam              # adam | sgd | lbfgs
+  alpha: 0.0001            # Regularização L2
+  batch_size: auto          # auto | inteiro (ex: 32, 64, 128)
+  dropout: false            # MLP sklearn não suporta dropout nativo
+
+optimizer:
+  learning_rate: 0.001
+  learning_rate_schedule: constant    # constant | adaptive | invscaling
+  momentum: 0.9            # Usado apenas com solver=sgd
+  nesterovs_momentum: true  # Momentum de Nesterov (apenas sgd)
+  beta_1: 0.9              # Adam: decaimento média 1ª ordem
+  beta_2: 0.999            # Adam: decaimento média 2ª ordem
+  epsilon: 1.0e-8           # Adam: estabilidade numérica
+
+training:
+  n_epochs: 50
+  seed: 42
+  early_stopping: false
+  patience: 10              # Épocas sem melhora antes de parar
+  tolerance: 1.0e-4         # Melhoria mínima para considerar progresso
+  shuffle: true             # Embaralhar dados a cada época

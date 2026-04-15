@@ -9,6 +9,7 @@ dist/
 build/
 
 # Virtual environments
+.venv312/
 .venv/
 venv/
 env/
